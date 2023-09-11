@@ -1,0 +1,175 @@
+.generate-page {
+    padding: 40px;
+    font-family: 'Arial, Helvetica, sans-serif';
+    background-color: #f4f4f4;
+  }
+  
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .top-bar h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #333;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .back-button {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 10px auto;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+  
+ .logout-link {
+    font-size: 1.2em;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .generate-page input, select {
+    padding: 8px;  /* Slightly smaller padding */
+    font-size: 1.1em;  /* Slightly smaller font size */
+    width: 45%;  /* Slightly smaller width */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: auto;  /* Center inputs */
+  }
+  
+  .centered-input {
+    width: 45%;  /* Centering the Word Count input */
+    margin: auto; /* Make sure it's centered */
+  }
+  
+  .advanced-toggle {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.2em;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .advanced-options {
+    margin-bottom: 40px;
+  }
+
+  .generate-desc-button {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+  }
+  
+  .go-to-button {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    text-align: center;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }  
+
+  /*
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    */
+
+  .go-to-button:hover {
+    background-color: #0056b3;
+  }
+
+  .error {
+    color: red;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 1em;
+  }
+  
+  .loading {
+    color: blue;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 1em;
+  }
+
+  .loading-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  .loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;  /* Adjust this value as needed */
+    margin-left: 10px;  /* Adjust this value as needed */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border-top-color: #007bff;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  .response-display {
+    color: black;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 1em;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    padding: 1em;
+    border-radius: 10px;
+  }
+  

@@ -1,0 +1,115 @@
+/* General styling for the Dashboard container */
+.dashboard {
+    padding: 40px;
+    background-color: #f4f4f4;
+    font-family: 'Arial, Helvetica, sans-serif';
+  }
+  
+  /* Header styling */
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .dashboard-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #333;
+    flex-grow: 1;  /* New */
+    text-align: center;  /* New */
+  }
+  
+  .dashboard-header a {
+    font-size: 1.2em;
+    color: #007bff;
+  }
+  
+ .generate-new-button {
+    display: inline-block;
+    padding: 16px 32px;
+    margin: 10px auto;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .generate-new-button:hover {
+    background-color: #0056b3;
+  }
+
+  .dashboard-container {
+    text-align: center;
+  }
+  
+  /* Listings Section */
+  .listings-section h2 {
+    text-align: center;
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+  .listings-box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .listings {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    overflow-y: scroll;
+    max-height: 600px;  /* Set a max-height so this section scrolls */
+    width: 100%;  /* New */
+  }
+  
+  .listing-card {
+    display: flex;
+    align-items: center;
+    flex: 0 0 calc(33% - 20px);
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .listing-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .listing-info {
+    flex-grow: 1;
+    padding: 0;
+    flex-direction: column;  /* New */
+    justify-content: center;  /* New */
+  }
+  
+  .listing-info ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .listing-info li {
+    margin: 5px 0;
+    color: #333;
+    font-size: 1.1em;
+  }
+  
