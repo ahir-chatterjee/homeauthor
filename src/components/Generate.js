@@ -150,7 +150,7 @@ const GeneratePage = () => {
       {error && <div className="error">{error}</div>}
       {loading ? (
         <div className="loading-wrapper">
-          <div className="loading">Loading... </div>
+          <div className="loading">Writing... </div>
           <div className="loading-spinner"></div>
         </div>
       ) : null}

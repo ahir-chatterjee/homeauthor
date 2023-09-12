@@ -10,6 +10,7 @@ const AuthPage = ({ isSignup }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const { user, setUser } = useUser();
   
   const navigate = useNavigate();
@@ -27,6 +28,8 @@ const AuthPage = ({ isSignup }) => {
 
   const handleAuth = async (e) => {  
     e.preventDefault();
+    setLoading(true);
+    console.log(loading);
     const apiUrl = "https://3mllscdebc.execute-api.us-east-1.amazonaws.com/prod/auth"; 
     const payload = {"email": email, "password": password, "isSignup": isSignup.toString()} 
 
@@ -55,40 +58,51 @@ const AuthPage = ({ isSignup }) => {
       setError("Error connecting to authentication service.");
       console.error("Error during authentication:" + error);
     }
+    setLoading(false);
   };
 
   return (
-    <form onSubmit={handleAuth} className="auth-page">
-        <h1>{isSignup ? "Signup" : "Login"}</h1>
-        <p>Hey there, thanks for using HomeAuthor Alpha. Please do NOT use a secure password for your safety, as we are still working on encryption!</p>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        {isSignup && (
+    <body>
+      <form onSubmit={handleAuth} className="auth-page">
+          <h1>{isSignup ? "Signup" : "Login"}</h1>
+          <input
+            type="email"
+            placeholder="Email"
+            disabled={loading}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <input
             type="password"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            placeholder="Password"
+            disabled={loading}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-        )}
-        <button onClick={handleAuth}>{isSignup ? "Signup" : "Login"}</button>
-        {error && <div className="error">{error}</div>}
-        <Link to={ isSignup ? "/login" : "/signup"} onClick={clearError}>
-          {isSignup ? "Already have an account? Login" : "Don't have an account? Signup"}
-        </Link>
-        <br/>
-        {/* {!isSignup && <Link to={"#"}>Forgot Login?</Link>} */}
-      </form>
+          {isSignup && (
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              disabled={loading}
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          )}
+          {loading ? (
+            <div className="loading-wrapper">
+              <div className="loading">Authenticating... </div>
+              <div className="loading-spinner"></div>
+            </div>
+          ) : null}
+          <button onClick={handleAuth}>{isSignup ? "Signup" : "Login"}</button>
+          {error && <div className="error">{error}</div>}
+          <Link to={ isSignup ? "/login" : "/signup"} onClick={clearError}>
+            {isSignup ? "Already have an account? Login" : "Don't have an account? Signup"}
+          </Link>
+          <br/>
+          {/* {!isSignup && <Link to={"#"}>Forgot Login?</Link>} */}
+        </form>
+      </body>
   );
 };
 
