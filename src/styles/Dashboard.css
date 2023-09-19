@@ -113,3 +113,12 @@
     font-size: 1.1em;
   }
   
+  .logout-wrapper {
+    text-align: right;
+  }
+  .logout-link {
+    font-size: 1.2em;
+    color: #007bff;
+    cursor: pointer;
+    margin-left: auto;
+  }  

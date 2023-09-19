@@ -87,3 +87,27 @@
 .remember-me-label input {
   margin-right: 10px; /* Adds some space between the checkbox and the text */
 }
+
+@media (max-width: 768px) {
+  .auth-page {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: none;
+  }
+
+  .auth-page input[type="email"],
+  .auth-page input[type="password"] {
+    max-width: 70%;
+    padding: 10px;
+    margin: 10px auto;
+    display: inline-block;
+  }
+
+  .auth-page button {
+    max-width: 80%;
+    padding: 15px;
+    margin: 20px auto;
+    display: inline-block;
+  }
+}

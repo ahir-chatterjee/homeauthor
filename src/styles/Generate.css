@@ -38,10 +38,23 @@
     background-color: #0056b3;
   }
   
+  .navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Add this line */
+  }
  .logout-link {
     font-size: 1.2em;
     color: #007bff;
     cursor: pointer;
+    margin-left: auto;
+  }
+
+  .logout-wrapper {
+    text-align: right;
+  }
+  .back-button-wrapper {
+    text-align: left;
   }
   
   .input-row {

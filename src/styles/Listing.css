@@ -70,6 +70,7 @@ body {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 30px;
+    flex-direction: row; /* Horizontal layout by default */
   }
   
   .listing-image {
@@ -174,6 +175,12 @@ body {
     height: 300px;
     overflow-y: auto;  /* Make it scrollable vertically */
     max-height: 300px;  /* Set a max-height or height */
+  }
+
+  @media (max-width: 768px) {
+    .listing-row {
+      flex-direction: column; /* Stack items vertically on mobile */
+    }
   }
   
   

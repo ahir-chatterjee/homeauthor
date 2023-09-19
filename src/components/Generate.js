@@ -109,10 +109,16 @@ const GeneratePage = () => {
 
   return (
     <div className="generate-page">
-      <div className="top-bar">
+      <div className='navBar'>
+        <div className='back-button-wrapper'>
           <Link to={previousTab ? previousTab : '/dashboard'} className="back-button">{"<< Dashboard"}</Link>
+        </div>
+        <div className='logout-wrapper'>
+          <Logout></Logout>
+        </div>
+      </div>
+      <div className="top-bar">
         <h1>Generate New Description</h1>
-        <Logout></Logout>
       </div>
       <p style={{"text-align": "center"}}>Generate a new description by selecting your MLS System and entering your listing's id. Currently we only support actris_ref.</p>
       <p style={{"text-align": "center"}}>If you don't want to leave this page, here are some sample listingIds for you to try: 9341767, 2004912, 7608968.</p>

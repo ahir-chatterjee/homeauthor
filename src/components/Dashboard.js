@@ -56,9 +56,11 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
+      <div className='logout-wrapper'>
+        <Logout></Logout>
+      </div>
       <div className="dashboard-header">
         <h1>HomeAuthor Dashboard</h1>
-        <Logout></Logout>
       </div>
       <div className="dashboard-container">
         <GenerateButton></GenerateButton>
