@@ -21,6 +21,7 @@ const GeneratePage = () => {
   const urlParts = parseUrl(location.pathname);
   const previousTab = location.state?.previousTab;
   const mlsDropdownRef = useRef(null);
+  const templateDropdownRef = useRef(null);
   const listingIdRef = useRef(null);
   const wordCountRef = useRef(null);
   const featuresRef = useRef(null);
@@ -57,6 +58,7 @@ const GeneratePage = () => {
     setError(null);
     const mlsValue = mlsDropdownRef.current.value;
     const listingIdValue = listingIdRef.current.value;
+    const templateDropdownValue = templateDropdownRef.current.value;
     if (!mlsValue || !listingIdValue) { 
       setError("Please fill out all required fields!");
       setLoading(false);
@@ -80,6 +82,7 @@ const GeneratePage = () => {
       console.log(featuresValue);
       console.log(amenitiesValue);
     }
+    templateDropdownValue ? payload["promptType"] = templateDropdownValue : payload["promptType"] = "base"
 
     console.log("Request Payload:", payload);
 
@@ -145,6 +148,18 @@ const GeneratePage = () => {
           <div className="input-row">
             <input type="text" placeholder="Unique Features" className="centered-input" ref={featuresRef} />
             <input type="text" placeholder="Nearby Amenities" className="centered-input" ref={amenitiesRef} />
+          </div>
+          <div className="input-row">
+            <select className="template-dropdown" ref={templateDropdownRef}>
+              <option selected>Base</option>
+              <option value="traditional">Traditional</option>
+              <option value="trendy">Trendy</option>
+              <option value="luxury">Luxury</option>
+              <option value="investor">Investor</option>
+              <option value="vacation">Vacation</option>
+              <option value="fixer">Fixer</option>
+              <option value="land">Land</option>
+            </select>
           </div>
       </div>
       )}
